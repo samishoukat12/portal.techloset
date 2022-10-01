@@ -1,0 +1,368 @@
+@font-face {
+    font-family: poppins;
+    src: url(../src//assets/fonts/Poppins/Poppins-Light.ttf);
+  }
+  
+  @font-face {
+    font-family: poppins-bold;
+    src: url(../src/assets/fonts/Poppins/Poppins-Medium.ttf);
+  }
+  
+  html,
+  body {
+    scroll-behavior: smooth;
+    padding: 0;
+    margin: 0;
+    font-family: 'proxima-nova';
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* colors */
+  :root {
+    --main-color: #F05C2F;
+    --main-shadow: 0 10px 30px 0 rgb(28 9 80 / 10%);
+    --main-font: 'poppins-bold'
+  }
+  
+  .bgColor {
+    background: linear-gradient(116.82deg, #00004f 0.52%, #00004f 27.78%, #00004f 100%);
+  
+  }
+  
+  /* mainContainer */
+  .mainContainer {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  .color{
+    background-color: var(--main-color) ;
+  }
+  
+  .underline {
+    border-bottom: 2px solid var(--main-color);
+  }
+  
+  
+  /* =================================================================================================================================================== */
+  
+  /* -----------------------------------------------------------------Generel FontStyles---------------------------------------------------------------- */
+  
+  /* =================================================================================================================================================== */
+  .typewriterTxt {
+    /* Font style/size use for all mein headings in this website- className = 'title' */
+    font-family: 'poppins-bold';
+    font-style: bold;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 42px;
+    letter-spacing: .2vh;
+  }
+  
+  .inputTitle {
+    font-family: 'poppins-bold';
+    font-size: 17px;
+    line-height: 24px;
+    letter-spacing: .1vh;
+  }
+  
+  .title {
+    /* Font style/size use for all mein headings in this website- className = 'title' */
+    font-family: 'poppins-bold';
+    font-style: bold;
+    font-weight: 800;
+    font-size: 38px;
+    line-height: 45px;
+    letter-spacing: .2vh;
+    color: black;
+  }
+  
+  .subTitle {
+    /* Font style/size use for all sub headings in this website- className = 'subTitle' */
+    font-family: 'poppins-bold';
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: .1vh;
+  }
+  
+  .heading {
+    font-family: 'poppins';
+    font-size: 22px;
+    line-height: 24px;
+    letter-spacing: .1vh;
+    color: rgb(99, 98, 98);
+  
+  }
+  
+  .paragraph {
+    /* Font style/size use for all paragraphs in this website- className = 'paragraphs' */
+    font-family: 'poppins';
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: 0.03em;
+    color: rgb(99, 98, 98);
+  }
+  
+  .linkText {
+    /* Font style/size use for all list items in this website- className = 'linkText' */
+    font-family: 'poppins-bold';
+    font-weight: 200;
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: .8px;
+  }
+  
+  
+  
+  .commonText {
+    /* Font style/size use for any common text which will not fall any of category mentioned above, in 
+    this website- className = 'commonText' */
+    font-family: 'poppins-bold';
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 10px;
+    letter-spacing: .1vh;
+  }
+  
+  .navLinksMobile {
+    font-family: 'poppins-bold';
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 22px;
+    letter-spacing: .8px;
+  }
+  
+  /* @media only screen and (min-width: 1400px){
+    .navLinksMobile{
+      font-family: 'proxima-nova';
+      font-style: bold;
+      font-weight: 600;
+      font-size: 22px ;
+      line-height: 24px ;
+      letter-spacing: 2px ;
+    }
+  } */
+  @media only screen and (max-width: 991px) {
+    .navLinksMobile {
+      /* Font style/size use for all sub headings in this website- className = 'subTitle' */
+      font-family: 'poppins-bold';
+      font-style: bold;
+      font-weight: 600;
+      font-size: 25px;
+      line-height: 24px;
+      letter-spacing: 2px;
+    }
+  }
+  
+  /* =================================================================================================================================================== */
+  
+  /* -----------------------------------------------------------------Max-1024px screen's FontStyles---------------------------------------------------- */
+  
+  /* =================================================================================================================================================== */
+  /* @media only screen and (min-width: 1400px) {
+    .title {
+      font-family: 'poppins-bold';
+      font-style: bold;
+      font-weight: 400;
+      font-size: 45px;
+      line-height: 50px;
+      letter-spacing: .2vh;
+    }
+  } */
+  
+  @media only screen and (max-width: 1024px) {
+    .title {
+      /* Font style/size use for all mein headings in this website- className = 'title' */
+      font-family: 'poppins-bold';
+      font-style: bold;
+      font-weight: 400;
+      font-size: 36px;
+      line-height: 50px;
+      letter-spacing: .2vh;
+    }
+  
+    .subTitle {
+      /* Font style/size use for all sub headings in this website- className = 'subTitle' */
+      font-family: 'poppins-bold';
+      font-style: bold;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 20px;
+      letter-spacing: .1vh;
+    }
+  
+    .heading {
+      font-family: 'poppins';
+      font-size: 18px;
+      line-height: 24px;
+      letter-spacing: .1vh;
+    }
+  
+    .paragraph {
+      /* Font style/size use for all paragraphs in this website- className = 'paragraphs' */
+      font-family: 'poppins';
+      font-style: bold;
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: 0.03em;
+    }
+  
+    .linkText {
+      /* Font style/size use for all list items in this website- className = 'linkText' */
+      font-family: 'poppins-bold';
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 14px;
+      letter-spacing: .8px;
+    }
+  
+    .commonText {
+      font-family: 'poppins-bold';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 11px !important;
+      line-height: 3vh;
+      letter-spacing: .1vh;
+    }
+  }
+  
+  /* =================================================================================================================================================== */
+  
+  /* -----------------------------------------------------------Tablet Max-768px screen's FontStyles---------------------------------------------------- */
+  
+  /* =================================================================================================================================================== */
+  
+  @media only screen and (max-width: 768px) {
+    .title {
+      /* Font style/size use for all mein headings in this website- className = 'title' */
+      font-family: 'poppins-bold';
+      font-style: bold;
+      font-weight: 400;
+      font-size: 30px;
+      line-height: 40px;
+      letter-spacing: .2vh;
+    }
+  
+    .subTitle {
+      /* Font style/size use for all sub headings in this website- className = 'subTitle' */
+      font-family: 'poppins-bold';
+      font-style: bold;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 18px;
+      letter-spacing: .1vh;
+    }
+  
+    .heading {
+      font-family: 'poppins';
+      font-size: 20px;
+      line-height: 24px;
+      letter-spacing: .1vh;
+    }
+  
+    .paragraph {
+      /* Font style/size use for all paragraphs in this website- className = 'paragraphs' */
+      font-family: 'poppins';
+      font-style: bold;
+      font-size: 14px !;
+      line-height: 18px;
+      letter-spacing: 0.03em;
+    }
+  
+    .linkText {
+      /* Font style/size use for all list items in this website- className = 'linkText' */
+      font-family: 'poppins-bold';
+      font-weight: bold;
+      font-size: 11px;
+      line-height: 14px;
+      letter-spacing: .8px;
+    }
+  
+    .commonText {
+      font-family: 'poppins-bold';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px !important;
+      line-height: 12px;
+      letter-spacing: .1vh;
+    }
+  }
+  
+  /* =================================================================================================================================================== */
+  
+  /* -----------------------------------------------------------Mobile Max-425px screen's FontStyles---------------------------------------------------- */
+  
+  /* =================================================================================================================================================== */
+  
+  @media only screen and (max-width: 425px) {
+    .title {
+      /* Font style/size use for all mein headings in this website- className = 'title' */
+      font-family: 'poppins-bold';
+      font-style: bold;
+      font-weight: 400;
+      font-size: 25px;
+      line-height: 30px;
+      letter-spacing: .2vh;
+    }
+  
+    .heading {
+      font-family: 'poppins';
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: .1vh;
+    }
+  
+    .subTitle {
+      /* Font style/size use for all sub headings in this website- className = 'subTitle' */
+      font-family: 'poppins-bold';
+      font-style: bold;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 16px;
+      letter-spacing: .1vh;
+    }
+  
+    .paragraph {
+      /* Font style/size use for all paragraphs in this website- className = 'paragraphs' */
+      font-family: 'poppins';
+      font-style: bold;
+      font-size: 13px;
+      line-height: 16px;
+      letter-spacing: 0.03em;
+    }
+   
+    .linkText {
+      /* Font style/size use for all list items in this website- className = 'linkText' */
+      font-family: 'poppins-bold';
+      font-weight: bold;
+      font-size: 11px;
+      line-height: 14px;
+      letter-spacing: .8px;
+    }
+  
+    .commonText {
+      font-family: 'poppins-bold';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 1.4vh;
+      line-height: 3vh;
+      letter-spacing: .1vh;
+    }
+  }
+  
+  
+  
+  @media only screen and (max-width: 991px) {
+    .mainContainer {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+  

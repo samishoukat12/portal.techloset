@@ -1,0 +1,70 @@
+{
+  "name": "trainings-portal",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@apollo/client": "^3.5.8",
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@mui/icons-material": "^5.3.1",
+    "@mui/material": "^5.3.1",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^0.27.2",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "dayjs": "^1.11.5",
+    "draft-js": "^0.11.7",
+    "draftjs-to-html": "^0.9.1",
+    "graphql": "^16.3.0",
+    "moment": "^2.29.4",
+    "react": "^17.0.2",
+    "react-calendar": "^3.7.0",
+    "react-dom": "^17.0.2",
+    "react-draft-wysiwyg": "^1.14.7",
+    "react-loader-spinner": "^5.1.0",
+    "react-phone-input-2": "^2.15.1",
+    "react-redux": "^7.2.6",
+    "react-router-dom": "^6.2.1",
+    "react-scripts": "^5.0.1",
+    "react-spinners-kit": "^1.9.1",
+    "react-toastify": "^8.1.0",
+    "redux": "^4.1.2",
+    "redux-thunk": "^2.4.1",
+    "web-vitals": "^2.1.4",
+    "xlsx": "^0.18.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "upload": "git config --global user.name “Ali338991” && git config --global user.email “ali.ansari7268@gmail.com” && git add . && git commit -m'update code' && git push origin master && git config --global user.name 'Adnan' && git config --global user.email 'connect.adnan.guru@gmail.com'",
+    "lint": "eslint src/**/*.jsx src/**/*.js",
+    "newlint": "eslint . --ext .js,.jsx"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "prettier": "^2.7.1"
+  }
+}
