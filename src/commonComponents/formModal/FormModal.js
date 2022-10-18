@@ -136,6 +136,7 @@ export default function FormModal({
                       required
                       fullWidth
                       variant="standard"
+                      maxlength="13"
                       defaultValue={
                         modalUpdateFlag
                           ? item.name === "file"
@@ -493,7 +494,7 @@ export default function FormModal({
                       defaultValue={modalUpdateFlag ? useEditData[item.name] : null}
                         onChange={emailHandler}
                       />
-                      {/* <input type="tel" /> */}
+                       {/* <input type="tel" /> */}
                     </>
                   ) : (
                     <FM.TextInput

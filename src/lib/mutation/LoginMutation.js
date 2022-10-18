@@ -106,3 +106,18 @@ export const ORG_LOGIN = gql`
     }
   }
 `
+
+export const FORGOT_PASS = gql`
+mutation ForgetPasswordUser($email: String!) {
+  forgetPasswordUser(email: $email) {
+    id
+  }
+}
+`
+export const ORG_FORGOT_PASS = gql`
+mutation ForgetPasswordOrganization($email: String!) {
+  forgetPasswordOrganization(email: $email) {
+    id
+  }
+}
+`

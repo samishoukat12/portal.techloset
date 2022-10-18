@@ -14,6 +14,7 @@ export default function Events() {
             // DELETE_LOADING,
             UPDATE_LOADING,
             refacteredData,
+            exportTableData,
             ctaFormHandler,
             // ctaDeleteHandler,
             ctaUpdateHandler,
@@ -51,7 +52,7 @@ export default function Events() {
                         Label: "Date"
                     },
                     {
-                        id: "peakerId",
+                        id: "speakerId",
                         Label: "Speaker Id"
                     },
                     {
@@ -102,6 +103,7 @@ export default function Events() {
                     filterTag: ['All', 'PAST', 'UPCOMING'],
                 }}
                 data={refacteredData}
+                exportTable={exportTableData}
                 ctaFormHandler={ctaFormHandler}
                 handleChange={handleChange}
                 // ctaDeleteHandler={ctaDeleteHandler}

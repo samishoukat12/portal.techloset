@@ -153,7 +153,7 @@ export const data =
           "FullAccess": false
         },
         {
-          "pageName": "Attandance",
+          "pageName": "Attendance",
           "pageID": "4",
           "pageURL": "/attandance",
           "page_id": "4",

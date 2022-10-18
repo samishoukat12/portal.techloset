@@ -13,6 +13,7 @@ export default function ContactUs() {
             // DELETE_LOADING,
             UPDATE_LOADING,
             refacteredData,
+            exportTableData,
             ctaFormHandler,
             // ctaDeleteHandler,
             ctaUpdateHandler,
@@ -92,6 +93,7 @@ export default function ContactUs() {
                         ],
                     }}
                     data={refacteredData}
+                    exportTable={exportTableData}
                     ctaFormHandler={ctaFormHandler}
                     // ctaDeleteHandler={ctaDeleteHandler}
                     ctaUpdateHandler={ctaUpdateHandler}

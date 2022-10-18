@@ -72,6 +72,21 @@ export function UseFaqs() {
 
   const [loader, setLoader] = useState(false);
 
+
+    const exportTableData = {
+    data: refacteredData.map((item) => {
+      return {
+      faqAnswer: item.faqAnswer,
+      faqQuestion: item.faqQuestion,
+      courseId: item.courseId,
+      createdAt: item.createdAt,
+      updateAt: item.updateAt
+      }
+    }),
+    sheetname: "Faqs",
+    filename: "Faqs-table-Data"
+    }
+
   //ADD FAQ's
   const AddFaqInCache = (cache, { data }) => {
     const newFaq = data.createFaq
@@ -224,6 +239,7 @@ export function UseFaqs() {
       // DELETE_LOADING,
       UPDATE_LOADING,
       refacteredData,
+      exportTableData,
       ctaFormHandler,
       // ctaDeleteHandler,
       ctaUpdateHandler,

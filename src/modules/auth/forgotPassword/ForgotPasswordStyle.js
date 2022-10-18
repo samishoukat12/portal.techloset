@@ -25,8 +25,7 @@ export const ForgotStyle = {
     Image: styled('img')(() => ({
         marginTop: 40,
         marginBottom: 40,
-        width: 200,
-        height: 130
+        width: 270,
     })),
     ForgotContainer: styled('div')(() => ({
         paddingTop: 48,
@@ -109,6 +108,13 @@ export const ForgotStyle = {
             width: '95%',
         },
     })),
+    CheckBoxContainer: styled('div')(() => ({
+        width: "80%",
+        marginTop: '10px',
+        "@media (max-width: 700px)": {
+            width: '95%',
+        },
+    })) ,
     IconContainer: styled('div')(() => ({
         alignItems: 'center',
         marginLeft: 21,
@@ -138,6 +144,20 @@ export const ForgotStyle = {
             width: '100%',
         },
     })),
+    LoaderContainer: styled('div')(() => ({
+        height: 52,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop: 20,
+    })),
+    ButtonContainer: styled('div')(() => ({
+        height: 52,
+        width: '100%',
+        "@media (max-width: 700px)": {
+            width: '95%',
+        },
+    })),
     RecoverButton: styled('button')(() => ({
         borderRadius: 8,
         height: 52,
@@ -150,9 +170,6 @@ export const ForgotStyle = {
         fontSize: '16px',
         cursor: 'pointer',
         marginTop: 20,
-        "@media (max-width: 700px)": {
-            width: '95%',
-        },
     })),
     ReturnToLoginLink: styled(Link)(() => ({
         display: 'flex',

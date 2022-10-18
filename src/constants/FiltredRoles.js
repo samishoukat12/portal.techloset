@@ -1,5 +1,5 @@
 import { useQuery, useReactiveVar } from "@apollo/client"
-import { useEffect } from "react"
+import { useEffect, useMemo } from "react"
 import {
   GET_ALL_ORGANIZATION,
   GET_COURSES,
@@ -49,7 +49,7 @@ export default function FiltredData() {
     }
   }
 
-  const COURSE_DATA = getCourseData()
+  const COURSE_DATA = useMemo(() => getCourseData(), [useUserData])
 
   const getStudent = () => {
     if (useUserData?.userGroup?.userGroupRole === "TEACHER") {
@@ -72,7 +72,7 @@ export default function FiltredData() {
     }
   }
 
-  const student = getStudent()
+  const student = useMemo(() => getStudent(), [useUserData])
 
   const teacher = USER_DATA?.users?.filter((role) => {
     return role?.userGroup?.userGroupRole === "TEACHER"

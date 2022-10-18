@@ -58,7 +58,7 @@ export default function CommonField({ Name, Label, Email, Address, Role, Passwor
                                 PhoneNo ?
                                     <PhoneInput
                                         placeholder="Enter CNIC"
-                                        value={PhoneNo}
+                                        value={Cnic}
                                         country='pk'
                                         inputProps={{ "country": "pk", "enableAreaCodes": true }}
                                         countryCodeEditable={false}

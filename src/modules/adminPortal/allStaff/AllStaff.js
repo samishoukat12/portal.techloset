@@ -15,6 +15,7 @@ export default function AllStaff() {
       // DELETE_LOADING,
       UPDATE_LOADING,
       refacteredData,
+      exportTableData,
       ctaFormHandler,
       // ctaDeleteHandler,
       ctaUpdateHandler,
@@ -97,6 +98,7 @@ export default function AllStaff() {
           key: "role",
           filterTag: ["All", "ADMIN", "TEACHER"],
         }}
+        exportTable={exportTableData}
         data={refacteredData}
         ctaFormHandler={ctaFormHandler}
         // ctaDeleteHandler={ctaDeleteHandler}

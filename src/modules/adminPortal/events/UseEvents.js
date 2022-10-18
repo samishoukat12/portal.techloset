@@ -91,6 +91,22 @@ export function UseEvents() {
 
     const [loader, setLoader] = useState(false);
 
+
+    const exportTableData = {
+    data: refacteredData.map((item) => {
+      return {
+            eventName: item.eventName,
+            eventDesc: item.eventDesc,
+            eventImage: item.eventImage,
+            eventDate: item.eventDate,
+            speakerId: item.speakerId,
+            eventStatus: item.eventStatus,
+      }
+    }),
+    sheetname: "Events",
+    filename: "Events-table-Data"
+    }
+
     //ADD STAFF
     const AddEventInCache = (cache, { data }) => {
         const newEvent = data.createEvents
@@ -273,6 +289,7 @@ export function UseEvents() {
             // DELETE_LOADING,
             UPDATE_LOADING,
             refacteredData,
+            exportTableData,
             ctaFormHandler,
             // ctaDeleteHandler,
             ctaUpdateHandler,

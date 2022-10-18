@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { utils as XLSXutils, writeFile as XLSXwriteFile } from 'xlsx';
+import empty from 'is-empty';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Table from '@mui/material/Table';
@@ -38,7 +40,8 @@ import {
   tabsPersmission
 } from '../../lib/reactivities/reactiveVarables';
 import { GET_EDIT_DATA } from '../../lib/queries/AllQueries';
-
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import DoDisturbIcon from '@mui/icons-material/DoDisturb';
 // export const openModal = makeVar(false);
 // export const updateFlag = makeVar(false)
 function descendingComparator(a, b, orderBy) {
@@ -146,6 +149,19 @@ const EnhancedTableToolbar = (props) => {
     </Icon>
   );
 
+  const csvExportButton = React.useRef()
+
+  // Handle Table export
+  const handleTableExport = () => {
+    if(!props.exportTable || empty(props.exportTable.data)) {
+      return console.log("No Data Provided");
+    }
+    let workBook = XLSXutils.book_new();
+    let workSheet = XLSXutils.json_to_sheet(props.exportTable.data)
+    XLSXutils.book_append_sheet(workBook, workSheet, props.exportTable.sheetname)
+    XLSXwriteFile(workBook, `${props.exportTable.filename}.xlsx`)
+  }
+
   const AddButton = ({ handleClickOpen }) => {
     return (
       <>
@@ -169,15 +185,6 @@ const EnhancedTableToolbar = (props) => {
       </>
     );
   };
-
-  // const buttonOnExport = () => {
-  //   var wb = XLSX.utils.book_new(),
-  //   ws = XLSX.utils.json_to_sheet(sheetData);
-
-  //   XLSX.utils.book_append_sheet(wb, ws, "mysheet");
-
-  //   XLSX.writeFile(wb,"Excel.xlsx");
-  // }
   return (
     <>
       <Toolbar
@@ -233,7 +240,6 @@ const EnhancedTableToolbar = (props) => {
                       disableFocusRipple
                       disableRipple
                       // onClick={handleAnchorClick}
-                      // onClick={buttonOnExport}
                     >
                       <NewTableStyle.FilterListIcon />
                     </IconButton>
@@ -250,7 +256,7 @@ const EnhancedTableToolbar = (props) => {
                   <NewTableStyle.ExportButton
                     variant="outlined"
                     startIcon={svgIcon}
-                    // onClick={handleAnchorClick}
+                    onClick={handleTableExport}
                   >
                     Export
                   </NewTableStyle.ExportButton>
@@ -262,7 +268,7 @@ const EnhancedTableToolbar = (props) => {
                     aria-label="search"
                     disableFocusRipple
                     disableRipple
-                    onClick={handleAnchorClick}>
+                    onClick={handleTableExport}>
                     <Icon>
                       <img alt="edit" src={CloudIcon} width={23} height={22} />
                     </Icon>
@@ -288,6 +294,7 @@ const EnhancedTableToolbar = (props) => {
                                         return items.CreatePermission ? */}
 
             <AddButton handleClickOpen={handleClickOpen} />
+
             {/* :
                                             ''
                                     })
@@ -368,7 +375,8 @@ export default function NewTable({
   ctaUpdateHandler,
   handleChange,
   disableAddIcon,
-  onDateChange
+  onDateChange,
+  exportTable = null,
 }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [filterValue, setFilterValue] = React.useState('');
@@ -609,6 +617,7 @@ export default function NewTable({
           useTabsPermission={useTabsPermission}
           handleAnchorClick={handleAnchorClick}
           handleClickOpen={handleClickOpen}
+          exportTable={exportTable}
         />
 
         <NewTableStyle.MobileViewTableHeader searchShow={searchShow} disableGutters>
@@ -728,7 +737,7 @@ export default function NewTable({
                                   <CommonModal modalDescription={row} />
                                 ) : subitem?.type === 'image' ? (
                                   <>
-                                    {row.eventImage || row.imageUrl ? (
+                                    { row.eventImage || row.imageUrl || row.spekaerImage ? (
                                       <NewTableStyle.Image alt={"Invalid URL"}  src={exactKey} />
                                     ) : (
                                       <p>No Image</p>
@@ -762,12 +771,39 @@ export default function NewTable({
                                             <div style={{
                                               width:'100%',
                                             }}>
-                                            <NewTableStyle.EditIcon />
+                                            <NewTableStyle.EditIcon style={{width:"22px"}}/>
 
                                             </div>
                                         </IconButton>
                                       </Tooltip>
+
+                                      <Tooltip title="Enable" >
+                                      <IconButton 
+                                      aria-label="enable"
+                                      size="small" >
+                                        <div style={{
+                                              width:'100%',
+                                            }}>
+                                      <NewTableStyle.CheckCircleIcon style={{width:"22px"}}/>
+
+                                      </div>
+                                      </IconButton>
+                                      </Tooltip>
+
+                                      <Tooltip title="Disable">
+                                      <IconButton 
+                                      aria-label="disable"
+                                      size="small" >
+                                        <div style={{
+                                              width:'100%',
+                                            }}>
+                                      <NewTableStyle.DoDisturbIcon style={{width:"22px"}}/>
+
+                                      </div>
+                                      </IconButton>
+                                      </Tooltip>
                                     </NewTableStyle.IconDiv>
+
                                   </>
                                 ) : subitem.key === 'role' || subitem.key === 'status' ? (
                                   <NewTableStyle.Role

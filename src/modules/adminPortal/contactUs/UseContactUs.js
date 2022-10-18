@@ -83,6 +83,20 @@ export function UseContactUs() {
     });
 
 
+  const exportTableData = {
+    data: refacteredData.map((item) => {
+      return {
+            name: item.name,
+            subject: item.subject,
+            message: item.message,
+            status: item.status,
+            reply: item.reply,
+      }
+    }),
+    sheetname: "Contact Us",
+    filename: "Contact-Us-table-Data"
+  }
+
     //ADD STAFF
     const AddContactInCache = (cache, { data }) => {
         const newContact = data.createContactUs
@@ -260,6 +274,7 @@ export function UseContactUs() {
             // DELETE_LOADING,
             UPDATE_LOADING,
             refacteredData,
+            exportTableData,
             ctaFormHandler,
             // ctaDeleteHandler,
             ctaUpdateHandler,

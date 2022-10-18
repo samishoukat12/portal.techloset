@@ -81,6 +81,21 @@ console.log('Many Org.', JSON.stringify(data, null, 2));
   });
   console.log("sami", refacteredData);
 
+
+    const exportTableData = {
+    data: refacteredData.map((item) => {
+      return {
+      name: item.name,
+      email: item.email,
+      role: item.role,
+      address: item.address,
+      contact: item.contact,
+      }
+    }),
+    sheetname: "All Organizations",
+    filename: "All-Organizations-table-Data"
+    }
+
   //ADD Organization
   const AddOrganizationInCache = (cache, { data }) => {
     const newOrganization = data.createOrganization
@@ -106,7 +121,7 @@ console.log('Many Org.', JSON.stringify(data, null, 2));
     event.preventDefault();
     if (!useEditData?.name) {
       ToastWarning("Name required");
-    } else if (useEmailVal==="") {
+    } else if (!useEmailVal) {
       ToastWarning("Email required");
     } else if (!useValTel) {
       ToastWarning("Contact required");
@@ -189,7 +204,7 @@ console.log('Many Org.', JSON.stringify(data, null, 2));
     event.preventDefault();
     if (!useEditData?.name) {
       ToastWarning("Name required");
-    } else if (!useEmailVal) {
+    } else if (!useEmailVal?.email) {
       ToastWarning("Email required");
     } else if (!useValTel) {
       ToastWarning("Contact Required");
@@ -212,7 +227,7 @@ console.log('Many Org.', JSON.stringify(data, null, 2));
                 set: useEditData?.name,
               },
               email: {
-                set: useEmailVal
+                set: useEmailVal,
               },
               password: {
                 set: useEditData?.password,
@@ -252,6 +267,7 @@ console.log('Many Org.', JSON.stringify(data, null, 2));
       // DELETE_LOADING,
       UPDATE_LOADING,
       refacteredData,
+      exportTableData,
       ctaFormHandler,
       // ctaDeleteHandler,
       ctaUpdateHandler,

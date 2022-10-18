@@ -17,6 +17,7 @@ export default function AllStudents() {
       // DELETE_LOADING,
       UPDATE_LOADING,
       refacteredData,
+      exportTableData,
       ctaFormHandler,
       // ctaDeleteHandler,
       ctaUpdateHandler,
@@ -100,6 +101,7 @@ export default function AllStudents() {
           ],
         }}
         data={refacteredData}
+        exportTable={exportTableData}
         ctaFormHandler={ctaFormHandler}
         // ctaDeleteHandler={ctaDeleteHandler}
         ctaUpdateHandler={ctaUpdateHandler}

@@ -112,12 +112,7 @@ function Sidebar(props) {
                               })
                             }
                             <>
-                              {
-                                item?.pageName === 'Attandance' ?
-                                  'Attendance'
-                                  :
-                                  <SidebarStyle.ListItemTextTagForDropDown primary={item?.pageName} />
-                              }
+                              <SidebarStyle.ListItemTextTagForDropDown primary={item?.pageName} />
                             </>
                           </ListItem>
                         </SidebarStyle.DomLink>
@@ -221,7 +216,9 @@ function Sidebar(props) {
         <SidebarStyle.childDiv>
           <ToastContainer />
           <SidebarStyle.innerChild>
-            <Outlet />
+            <SidebarStyle.outletMargin>
+              <Outlet />
+            </SidebarStyle.outletMargin>
             <Footer />
           </SidebarStyle.innerChild>
         </SidebarStyle.childDiv>

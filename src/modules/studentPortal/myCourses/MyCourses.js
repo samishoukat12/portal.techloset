@@ -12,6 +12,7 @@ export default function MyCourse() {
       // DELETE_LOADING,
       UPDATE_LOADING,
       refacteredData,
+      exportTableData,
       ctaFormHandler,
       // ctaDeleteHandler,
       ctaUpdateHandler,
@@ -126,6 +127,7 @@ export default function MyCourse() {
         filterTag: ['All', 'PENDING', 'PAID', 'HALFPAID'],
       }}
       data={refacteredData}
+      exportTable={exportTableData}
       disableAddIcon={true}
     />
 

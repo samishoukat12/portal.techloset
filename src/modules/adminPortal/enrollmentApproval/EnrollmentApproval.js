@@ -13,6 +13,7 @@ function EnrollmentApproval() {
       // DELETE_LOADING,
       UPDATE_LOADING,
       refacteredData,
+      exportTableData,
       ctaFormHandler,
       // ctaDeleteHandler,
       ctaUpdateHandler,
@@ -95,6 +96,7 @@ function EnrollmentApproval() {
             filterTag: ['All', 'PENDING', 'APPROVED', 'REJECT'],
           }}
           data={refacteredData}
+          exportTable={exportTableData}
           ctaFormHandler={ctaFormHandler}
           // ctaDeleteHandler={ctaDeleteHandler}
           ctaUpdateHandler={ctaUpdateHandler}

@@ -19,6 +19,7 @@ export default function ApiPermissions() {
       // DELETE_LOADING,
       // UPDATE_LOADING,
       refacteredData,
+      exportTableData,
       // ctaFormHandler,
       // ctaDeleteHandler,
       // ctaUpdateHandler,
@@ -94,6 +95,7 @@ export default function ApiPermissions() {
           ],
         }}
         data={refacteredData}
+        exportTable={exportTableData}
         // ctaFormHandler={ctaFormHandler}
         // ctaDeleteHandler={ctaDeleteHandler}
         // ctaUpdateHandler={ctaUpdateHandler}

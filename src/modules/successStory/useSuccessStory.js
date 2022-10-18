@@ -102,6 +102,23 @@ export function UseSuccessStory() {
 
   const [loader, setLoader] = useState(false);
 
+
+    const exportTableData = {
+    data: refacteredData.map((item) => {
+      return {
+      city: item.city,
+      freelancingProfileUrl: item.freelancingProfileUrl,
+      paymentProof: item.paymentProof,
+      description: item.description,
+      status: item.status,
+      totalEarnedAmount: item.totalEarnedAmount,
+      whyReject: item.whyReject,
+      }
+    }),
+    sheetname: "Success Stories",
+    filename: "Success-Stories-table-Data"
+  }
+
   //ADD Success story
   const AddSuccesStoryInCache = (cache, { data }) => {
     const newStory = data.createSuccessStories
@@ -300,6 +317,7 @@ export function UseSuccessStory() {
       // DELETE_LOADING,
       UPDATE_LOADING,
       refacteredData,
+      exportTableData,
       ctaFormHandler,
       // ctaDeleteHandler,
       ctaUpdateHandler,

@@ -190,7 +190,7 @@ export default function UseSpeakers() {
                                 set: useEditData?.spkearDesc,
                             },
                             spekaerImage: {
-                                set: useImageUrl
+                                set: useImageUrl,
                             }
                         },
                     },

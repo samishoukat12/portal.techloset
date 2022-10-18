@@ -11,6 +11,7 @@ export default function CourseCategory() {
             // DELETE_LOADING,
             UPDATE_LOADING,
             refacteredData,
+            exportTableData,
             ctaFormHandler,
             // ctaDeleteHandler,
             ctaUpdateHandler,
@@ -86,6 +87,7 @@ export default function CourseCategory() {
                 ],
             }}
             data={refacteredData}
+            exportTable={exportTableData}
             disableAddIcon={true}
         />
 

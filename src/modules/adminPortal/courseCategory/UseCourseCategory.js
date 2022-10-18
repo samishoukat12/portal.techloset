@@ -60,6 +60,20 @@ export default function UseCourseCategory() {
     });
 
 
+    const exportTableData = {
+    data: refacteredData.map((item) => {
+      return {
+        categoryName: item.categoryName,
+        imageUrl: item.imageUrl,
+        createdAt: item.createdAt,
+        updateAt: item.updateAt,
+      }
+    }),
+    sheetname: "Course Category",
+    filename: "Course-Category-table-Data"
+    }
+
+
     //ADD category
     const AddCategoryInCache = (cache, { data }) => {
         const newCategory = data.createCategory
@@ -195,6 +209,7 @@ export default function UseCourseCategory() {
             // DELETE_LOADING,
             UPDATE_LOADING,
             refacteredData,
+            exportTableData,
             ctaFormHandler,
             // ctaDeleteHandler,
             ctaUpdateHandler,

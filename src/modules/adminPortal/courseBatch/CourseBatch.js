@@ -11,6 +11,7 @@ export default function CourseBatch() {
             // DELETE_LOADING,
             UPDATE_LOADING,
             refacteredData,
+            exportTableData,
             ctaFormHandler,
             // ctaDeleteHandler,
             ctaUpdateHandler,
@@ -89,6 +90,7 @@ export default function CourseBatch() {
                 ],
             }}
             data={refacteredData}
+            exportTable={exportTableData}
             disableAddIcon={true}
         />
 

@@ -13,6 +13,7 @@ export default function FAQS() {
             // DELETE_LOADING,
             UPDATE_LOADING,
             refacteredData,
+            exportTableData,
             ctaFormHandler,
             // ctaDeleteHandler,
             ctaUpdateHandler,
@@ -98,6 +99,7 @@ export default function FAQS() {
                     filterTag: ['All', 'ADMIN', 'TEACHER'],
                 }}
                 data={refacteredData}
+                exportTable={exportTableData}
                 ctaFormHandler={ctaFormHandler}
                 // ctaDeleteHandler={ctaDeleteHandler}
                 ctaUpdateHandler={ctaUpdateHandler}

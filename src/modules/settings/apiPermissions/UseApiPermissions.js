@@ -45,7 +45,7 @@ export function UseApiPermissions() {
         {
             label: "Cnic",
             name: "cnic",
-            type: "number",
+            type: "text",
         },
         {
             label: "Contact",
@@ -123,6 +123,13 @@ export function UseApiPermissions() {
     //         })
     //     }
     // });
+
+
+    const exportTableData = {
+    data: refacteredData,
+    sheetname: "Api Permissions",
+    filename: "Api-Permissions-table-Data"
+    }
 
 
     //ADD STAFF
@@ -358,6 +365,7 @@ export function UseApiPermissions() {
             // DELETE_LOADING,
             UPDATE_LOADING,
             refacteredData,
+            exportTableData,
             ctaFormHandler,
             // ctaDeleteHandler,
             ctaUpdateHandler,

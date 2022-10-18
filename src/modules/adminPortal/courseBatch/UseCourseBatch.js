@@ -65,6 +65,20 @@ export default function UseCourseBatch() {
         });
     });
 
+    const exportTableData = {
+     data: refacteredData.map((item) => {
+       return {
+         name: item.name,
+         coursesId: item.coursesId,
+         courseName: item.courseName,
+         createdAt: item.createdAt,
+         updateAt: item.updateAt,
+       }
+     }),
+     sheetname: "Course Batch",
+     filename: "Course-Batch-table-Data"
+    }
+
 
     //ADD Course Batch
     const AddCourseBatchInCache = (cache, { data }) => {
@@ -225,6 +239,7 @@ export default function UseCourseBatch() {
             // DELETE_LOADING,
             UPDATE_LOADING,
             refacteredData,
+            exportTableData,
             ctaFormHandler,
             // ctaDeleteHandler,
             ctaUpdateHandler,

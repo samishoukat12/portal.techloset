@@ -143,6 +143,22 @@ export function UseAllStudents() {
     })
   }
 
+
+  const exportTableData = {
+    data: refacteredData.map((item) => {
+      return {
+        name: item.name,
+        email: item.email,
+        cnic: item.cnic,
+        address: item.address,
+        contact: item.contact,
+        role: item.role,
+      }
+    }),
+    sheetname: "All Students",
+    filename: "All-Students-table-Data"
+  }
+
   //ADD Student
   const AddUserInCache = (cache, { data }) => {
     const newUser = data.register
@@ -309,6 +325,7 @@ export function UseAllStudents() {
       // DELETE_LOADING,
       UPDATE_LOADING,
       refacteredData,
+      exportTableData,
       ctaFormHandler,
       // ctaDeleteHandler,
       ctaUpdateHandler,

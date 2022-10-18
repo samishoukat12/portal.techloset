@@ -75,6 +75,13 @@ export function UseTabsPermissions() {
     console.log("refacteredData", refacteredData);
 
 
+    const exportTableData = {
+    data: refacteredData,
+    sheetname: "User Groups",
+    filename: "User-Group-table-Data"
+  }
+
+
     //ADD STAFF
 
     let [CreateCourseQuiz, { loading: ADD_LOADING }] = useMutation(ADD_QUIZ);
@@ -225,6 +232,7 @@ export function UseTabsPermissions() {
             // DELETE_LOADING,
             UPDATE_LOADING,
             refacteredData,
+            exportTableData,
             ctaFormHandler,
             // ctaDeleteHandler,
             ctaUpdateHandler,

@@ -12,6 +12,7 @@ export default function Attandance() {
       // DELETE_LOADING,
       UPDATE_LOADING,
       refacteredData,
+      exportTableData,
       ctaFormHandler,
       // ctaDeleteHandler,
       ctaUpdateHandler,
@@ -29,11 +30,11 @@ export default function Attandance() {
   }
   return (
     <NewTable
-      title={'Attandance'}
+      title={'Attendance'}
       tableHeadings={[
         {
           id: "attendence",
-          Label: "Attendence"
+          Label: "Attendance"
         },
         {
           id: "date",
@@ -78,6 +79,7 @@ export default function Attandance() {
           'ABSENT'],
       }}
       data={refacteredData}
+      exportTable={exportTableData}
       disableAddIcon={true}
     />
 

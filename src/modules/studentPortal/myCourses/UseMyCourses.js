@@ -71,7 +71,7 @@ export default function UseMyCourses() {
             id: item.id,
             coursesId: item.coursesId,
             studentId: item.studentId,
-            courseApproval: item.courseApproval,
+            courseApproval: item.courseApproval ? "Approved" : "Not Approved",
             whyReject: item.whyReject,
             feeStatus: item.feeStatus,
             // courseBatchesId: item.courseBatchesId,
@@ -82,6 +82,23 @@ export default function UseMyCourses() {
     console.log("refacteredData in useMyCourse", refacteredData);
 
     const [loader, setLoader] = useState(false);
+
+    const exportTableData = {
+        data: refacteredData.map((item) => {
+        return {
+        coursesId: item.coursesId,
+        studentId: item.studentId,
+        courseApproval: item.courseApproval,
+        whyReject: item.whyReject,
+        feeStatus: item.feeStatus,
+        updateAt: item.updateAt,
+        createdAt: item.createdAt,
+        }
+        }),
+    sheetname: "My Courses",
+    filename: "My-Courses-table-Data"
+  }
+
 
     //ADD MY COURSE
     const AddMyCourseInCache = (cache, { data }) => {
@@ -259,6 +276,7 @@ export default function UseMyCourses() {
             // DELETE_LOADING,
             UPDATE_LOADING,
             refacteredData,
+            exportTableData,
             ctaFormHandler,
             // ctaDeleteHandler,
             ctaUpdateHandler,

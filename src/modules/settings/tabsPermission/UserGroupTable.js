@@ -19,6 +19,7 @@ export default function UserGroupTable() {
       // DELETE_LOADING,
       // UPDATE_LOADING,
       refacteredData,
+      exportTableData,
       // ctaFormHandler,
       // ctaDeleteHandler,
       // ctaUpdateHandler,
@@ -101,6 +102,7 @@ export default function UserGroupTable() {
           ],
         }}
         data={refacteredData}
+        exportTable={exportTableData}
       // ctaFormHandler={ctaFormHandler}
       // ctaDeleteHandler={ctaDeleteHandler}
       // ctaUpdateHandler={ctaUpdateHandler}

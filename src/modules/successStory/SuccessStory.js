@@ -12,6 +12,7 @@ export default function SuccessStory() {
       // DELETE_LOADING,
       UPDATE_LOADING,
       refacteredData,
+      exportTableData,
       ctaFormHandler,
       // ctaDeleteHandler,
       ctaUpdateHandler,
@@ -104,6 +105,7 @@ export default function SuccessStory() {
             filterTag: ['All', 'PUBLISH', 'UNPUBLISH'],
           }}
           data={refacteredData}
+          exportTable={exportTableData}
           ctaFormHandler={ctaFormHandler}
           // ctaDeleteHandler={ctaDeleteHandler}
           ctaUpdateHandler={ctaUpdateHandler}

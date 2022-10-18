@@ -198,7 +198,7 @@ export default function Navigation() {
                                 <Quiz />
                             </PrivateRouting>}
                     />
-                    <Route path='/attandance'
+                    <Route path='/attendance'
                         element={
                             <PrivateRouting isAllowed={useCheckAuth}>
                                 <MyAttandance />

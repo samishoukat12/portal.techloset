@@ -10,6 +10,9 @@ import FilterListIcon from '@mui/icons-material/FilterList';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import AddIcon from '@mui/icons-material/Add';
 import { tableCellClasses } from "@mui/material/TableCell";
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import DoDisturbIcon from '@mui/icons-material/DoDisturb';
+
 export const NewTableStyle = {
     Paper: styled(Paper)(() => ({
         width: '100%',
@@ -124,10 +127,20 @@ export const NewTableStyle = {
         color: '#f44336'
     })),
     EditIcon: styled(Edit)(({ theme }) => ({
-        color: '#96A0B5',
+        // color: '#96A0B5',
+        // color: '#0ff4de',
+        color: '#1e86ff',
         // marginLeft: 12.5
 
 
+    })),
+    CheckCircleIcon: styled(CheckCircleIcon)(({ theme }) => ({
+        // color: '#0ff4de'
+        color: '#20c94f'
+    })),
+    DoDisturbIcon: styled(DoDisturbIcon)(({ theme }) => ({
+        color: '#F72e3a',
+        
     })),
     IconDiv: styled('div')(() => ({
         display: "flex",

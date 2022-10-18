@@ -103,9 +103,9 @@ export var MENU_ITEMS = [
         path: '/quiz',
     },
     {
-        text: 'Attandance',
+        text: 'Attendance',
         icon: <CoPresentIcon />,
-        path: '/attandance',
+        path: '/attendance',
     },
     {
         text: 'Lecture',

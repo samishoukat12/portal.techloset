@@ -124,8 +124,8 @@ export const SidebarStyle = {
     minHeight: '100vh',
     height: '100%',
     // padding: theme.spacing(2),
-    paddingLeft: theme.spacing(2),
-    paddingRight: theme.spacing(2),
+    // paddingLeft: theme.spacing(2),
+    // paddingRight: theme.spacing(2),
     paddingTop: theme.spacing(2),
     [theme.breakpoints.down('md')]: {
     //   paddingLeft: theme.spacing(1),
@@ -139,6 +139,9 @@ export const SidebarStyle = {
     display: "flex",
     minHeight: "85vh",
     flexDirection: "column",
+  })),
+  outletMargin: styled("div")(({ theme }) => ({
+    padding: "0 16px"
   })),
   innerChild: styled("div")(({ theme }) => ({
     flex: 1,

@@ -2,7 +2,7 @@ import { ApolloClient, InMemoryCache, createHttpLink } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import { editData, checkAuth } from "./reactivities/reactiveVarables";
 const httpLink = createHttpLink({
-    // uri: 'http://localhost:3000/graphql',
+    // uri: 'http://localhost:5000/graphql',
     uri: "https://training-portal-backend.herokuapp.com/graphql",
 });
 

@@ -113,32 +113,6 @@ export function UseAllStaff() {
       });
     }
   })
-
-  data?.useUserData?.map((item) => {
-    if (userData.userGroup.userGroupRole === "STUDENT") {
-      refacteredData.push({
-        id: item.id,
-        name: item.name,
-        email: item.email,
-        cnic: item.cnic,
-        address: item.address,
-        contact: item.contact,
-        role: item.userGroup.userGroupRole,
-        courseID: item.courseID,
-        assignment: item.assignment,
-        courseCategory: courseCategory.map((cour) => {
-         cour.createdAt,
-         cour.id,
-         cour.imageURL,
-         cour.updateAt
-        }),
-        enrollList: item.enrollList,
-        courseQuiz: item.courseQuiz,
-        attendance: item.attendance
-      });
-    }
-  })
-
   data?.users?.map((item) => {
     if (item.userGroup.userGroupRole === "TEACHER") {
       refacteredData.push({
@@ -165,10 +139,23 @@ export function UseAllStaff() {
       });
     }
 
-
-    console.log(item);
   });
   console.log("in useAllStaff", refacteredData);
+
+  const exportTableData = {
+    data: refacteredData.map((item) => {
+      return {
+        name: item.name,
+        email: item.email,
+        cnic: item.cnic,
+        address: item.address,
+        contact: item.contact,
+        role: item.role,
+      }
+    }),
+    sheetname: "All Staff",
+    filename: "All-Staff-table-Data"
+  }
 
 
   //ADD STAFF
@@ -432,6 +419,7 @@ export function UseAllStaff() {
       // DELETE_LOADING,
       UPDATE_LOADING,
       refacteredData,
+      exportTableData,
       ctaFormHandler,
       // ctaDeleteHandler,
       ctaUpdateHandler,

@@ -90,6 +90,22 @@ export function UseEnrollmentApproval() {
 
   const [loader, setLoader] = useState(false);
 
+
+    const exportTableData = {
+    data: refacteredData.map((item) => {
+      return {
+      userId: item.userId,
+      coursesId: item.coursesId,
+      status: item.status,
+      paymentMethod: item.paymentMethod,
+      amount: item.amount,
+      transactionId: item.transactionId,
+      }
+    }),
+    sheetname: "Enrollment Approval",
+    filename: "Enrollment-Approval-table-Data"
+    }
+
   //ADD Enrollment Approval
   const AddEnrollmentApprovalInCache = (cache, { data }) => {
     const newApproval = data.createEnrollmentApproval
@@ -277,6 +293,7 @@ export function UseEnrollmentApproval() {
       // DELETE_LOADING,
       UPDATE_LOADING,
       refacteredData,
+      exportTableData,
       ctaFormHandler,
       // ctaDeleteHandler,
       ctaUpdateHandler,

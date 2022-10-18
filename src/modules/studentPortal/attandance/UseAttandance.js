@@ -101,6 +101,19 @@ export default function UseAttandance() {
 
   const [loader, setLoader] = useState(false)
 
+
+    const exportTableData = {
+    data: refacteredData.map((item) => {
+      return {
+        attendence: item.attendence,
+        date: item.date,
+        userId: item.userId,
+      }
+    }),
+    sheetname: "Attendance",
+    filename: "Attandance-table-Data"
+    }
+
   //ADD Attendance
   const AddAttendenceInCache = (cache, { data }) => {
     const newAttendence = data.createAttendence
@@ -126,7 +139,7 @@ export default function UseAttandance() {
   const ctaFormHandler = async (event) => {
     event.preventDefault()
     if (!useEditData?.attendence) {
-      ToastWarning("attendence required")
+      ToastWarning("Attendance required")
     } else if (!useEditData?.user) {
       ToastWarning("user required")
     } else {
@@ -147,7 +160,7 @@ export default function UseAttandance() {
             openModal(false)
             updateFlag(false)
             editData({})
-            ToastSuccess("Attandance marked")
+            ToastSuccess("Attendance marked")
           },
         })
       } catch (error) {
@@ -187,7 +200,7 @@ export default function UseAttandance() {
   const ctaUpdateHandler = async (event) => {
     event.preventDefault()
     if (!useEditData?.attendence) {
-      ToastWarning("attendence required")
+      ToastWarning("Attendance required")
     } else if (!useEditData?.user) {
       ToastWarning("user required")
     } else {
@@ -216,7 +229,7 @@ export default function UseAttandance() {
             openModal(false)
             updateFlag(false)
             editData({})
-            ToastSuccess("Attandance Updated")
+            ToastSuccess("Attendance Updated")
           },
         })
       } catch (error) {
@@ -232,6 +245,7 @@ export default function UseAttandance() {
       // DELETE_LOADING,
       UPDATE_LOADING,
       refacteredData,
+      exportTableData,
       ctaFormHandler,
       // ctaDeleteHandler,
       ctaUpdateHandler,
